@@ -30,6 +30,7 @@
   height: 227px;
   margin-bottom: 16px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .product__category,
@@ -51,11 +52,25 @@
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 4px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product__description {
   font-weight: 400;
   font-size: 14px;
+  flex-grow: 1;
+  margin-bottom: 16px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product__price {
@@ -111,19 +126,22 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .product__item {
-    width: 100%;
+  .product__card {
     height: 440px;
   }
 
   .product__image {
     height: 234px;
   }
+
+  .product__description {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-  .product__item {
-    /* width: 310px; */
+  .product__card {
     height: 431px;
   }
 
